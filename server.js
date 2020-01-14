@@ -29,7 +29,7 @@ wss.broadcast = function broadcast(data) {
   });
 };
 
-var iotHubReader = new iotHubClient(process.env['Azure.IoT.IoTHub.ConnectionString'], process.env['Azure.IoT.IoTHub.ConsumerGroup']);
+var iotHubReader = new iotHubClient(process.env['HostName=MirunaPripon.azure-devices.net;DeviceId=raspberrypi3;SharedAccessKey=R2ZWB5mXv+KEmljaUziKvmQjhpPYxDIlqL0rBqbQ3T0='], process.env['iotmiruna']);
 iotHubReader.startReadMessage(function (obj, date) {
   try {
     console.log(date);
