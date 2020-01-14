@@ -11,7 +11,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(function (req, res/*, next*/) {
   res.redirect('/');
 });
-
 const server = http.createServer(app);
 const wss = new WebSocket.Server({ server });
 
@@ -29,7 +28,7 @@ wss.broadcast = function broadcast(data) {
   });
 };
 
-var iotHubReader = new iotHubClient(process.env['HostName=MirunaPripon.azure-devices.net;DeviceId=raspberrypi3;SharedAccessKey=R2ZWB5mXv+KEmljaUziKvmQjhpPYxDIlqL0rBqbQ3T0='], process.env['iotmiruna']);
+var iotHubReader = new iotHubClient(process.env('HostName=MirunaPripon.azure-devices.net;DeviceId=raspberrypi3;SharedAccessKey=R2ZWB5mXv+KEmljaUziKvmQjhpPYxDIlqL0rBqbQ3T0='), process.env('iotmiruna'));
 iotHubReader.startReadMessage(function (obj, date) {
   try {
     console.log(date);
